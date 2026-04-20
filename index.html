@@ -1,46 +1,15 @@
-<!-- <!doctype html> -->
-<!-- <html> -->
-<!--   <head> -->
-<!--     <title>WebSocket Client</title> -->
-<!--   </head> -->
-<!--   <body> -->
-<!--     <script> -->
-<!--       const socket = new WebSocket("ws://localhost:8080"); -->
-<!---->
-<!--       socket.addEventListener("open", (event) => { -->
-<!--         socket.send("Hello Server!"); -->
-<!--       }); -->
-<!---->
-<!--       socket.addEventListener("message", (event) => { -->
-<!--         console.log("Message from server", event.data); -->
-<!--       }); -->
-<!--     </script> -->
-<!--   </body> -->
-<!-- </html> -->
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>WebSocket Client</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>WebSocket Client</h1>
-    <script>
-      const socket = new WebSocket("ws://localhost:8080");
-
-      socket.onopen = () => {
-        console.log("Connected to server");
-        socket.send("Hello, Server!");
-      };
-
-      socket.onmessage = (event) => {
-        console.log(`Message from server: ${event.data}`);
-      };
-
-      socket.onclose = () => {
-        console.log("Connection closed");
-      };
-    </script>
+    <div id="messages"></div>
+    <input id="message" type="text" placeholder="Write a message" />
+    <button id="send">Send message</button>
+    <script src="client.js"></script>
   </body>
 </html>
