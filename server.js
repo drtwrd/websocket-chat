@@ -3,9 +3,6 @@ const WebSocket = require("ws");
 const wss = new WebSocket.Server({ port: 8080 });
 
 wss.on("connection", (ws) => {
-    // Sending a message to the client
-    ws.send("Welcome to the WebSocket server!");
-
     // Listening for messages from the client
     ws.on("message", (message) => {
         // Sending a message to all clients

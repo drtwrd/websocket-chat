@@ -27,7 +27,6 @@ sendBtn.onclick = () => {
     const text = inputMsg.value;
     if (text) {
         socket.send(text);
-        sendMsgToChat(`Me: ${text}`);
         inputMsg.value = "";
     }
 };
