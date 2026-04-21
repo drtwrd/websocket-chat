@@ -23,10 +23,12 @@ socket.onerror = (error) => {
     console.error(`WebSocket error: ${error}`);
 };
 
+const clientID = Math.floor(Math.random() * 1000);
+
 sendBtn.onclick = () => {
     const text = inputMsg.value;
     if (text) {
-        socket.send(text);
+        socket.send(`[User ${clientID}] - ${text}`);
         inputMsg.value = "";
     }
 };
